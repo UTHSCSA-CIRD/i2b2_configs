@@ -7,10 +7,13 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 <!--
 This one is supposed to scan through all the *-ds.xml files as an xsl
 document for inclusion in the main one that sets passwords and other 
-variables elswehere
+variables elsewhere.
 
-Usage:
-echo "<xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" version=\"1.0\">" > pwinclude.xsl && for ii in `ls opt/jboss-as-7.1.1.Final/standalone/deployments/*-ds.xml`; do xsltproc contxedit.xsl $ii; done|grep xsl|uniq|sed -e "s/xmlns:xsl.*name/name/" >> pwinclude.xsl && echo "</xsl:stylesheet>" >> pwinclude.xsl
+Usage (with this file, under the name of getpws.xsl, in the same 
+directory as bash_fns.sh and global_config.rc:
+
+source ./bash_fns.sh
+getpws
 -->
 
 <xsl:template match="node()|@*">

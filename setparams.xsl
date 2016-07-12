@@ -22,7 +22,7 @@
 This is a draft of an xslt script that will painlessly do the annoying xxx-ds.xml edits on i2b2 and shrine
 
 actually... new usage:
-xsltproc conftr.xsl FOO.xml 
+xsltproc setparams.xsl FOO.xml 
 -->
   
   <xsl:template match="node()|@*">
