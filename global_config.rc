@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # PATHS
 # These are for finding things on the host machine
@@ -8,6 +9,12 @@ export JBOSS_CONF=$JBOSS_HOME/standalone/configuration
 export JBOSS_REPO_HOME=opt/jboss-as-7.1.1.Final
 export JBOSS_REPO_DEPL=$JBOSS_REPO_HOME/standalone/deployments
 export JBOSS_REPO_CONF=$JBOSS_REPO_HOME/standalone/configuration
+export CONFDIRS='$JBOSS_REPO_DEPL $JBOSS_REPO_CONF'
 
 # XML
 export SSHEADER="<xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" version=\"1.0\">";
+
+# File-name and directory-name patterns to exclude
+export fexclude='{*edit,*debug,*orig,*BAK,*bak,*fcs,*NOPE,*tomcat,*full.xml,*-ha.xml}'
+export dexclude='{log,tmp,i2b2.war,*.log,*_history,*.old}'
+
